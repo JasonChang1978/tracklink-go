@@ -43,39 +43,13 @@ func trackHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	logToGoogleSheets(id)
-	/*
-		now := time.Now().Format("2006-01-02 15:04:05")
-
-		// 準備要發送的資料
-		postData := map[string]string{
-			"id":        id,
-			"timestamp": now,
-		}
-		jsonData, err := json.Marshal(postData)
-		if err != nil {
-			http.Error(w, "Error encoding JSON", http.StatusInternalServerError)
-			return
-		}
-
-		// Google Apps Script 的網路應用程式 URL (請替換為您的實際 URL)
-		appsScriptURL := ""
-	*/
-	// 發送 HTTP POST 請求
-	/*
-		resp, err := http.Post(appsScriptURL, "application/json", bytes.NewBuffer(jsonData))
-		if err != nil {
-			fmt.Println("Error sending request to Apps Script:", err)
-			http.Error(w, "Error logging data", http.StatusInternalServerError)
-			return
-		}
-		defer resp.Body.Close()
-
-
-		fmt.Println("Data sent to Google Sheets. Status:", resp.Status)
-	*/
+	if id == "12345" {
+		fmt.Println("ID: 12345 is test data, ignore")
+	} else {
+		logToGoogleSheets(id)
+	}
 
 	// 顯示訊息
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
-	fmt.Fprint(w, "<p>您已完成帳號確認</p>")
+	fmt.Fprint(w, "<p>您已完成社交工程演練!!</p>")
 }
