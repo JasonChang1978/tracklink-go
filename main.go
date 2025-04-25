@@ -30,5 +30,5 @@ func trackHandler(w http.ResponseWriter, r *http.Request) {
 
 	// 顯示訊息
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
-	fmt.Fprint(w, "<p>您已完成帳號確認</p>")
+	fmt.Fprint(w, "<p>You are cheating! id="+id+"!中文測試</p>")
 }
