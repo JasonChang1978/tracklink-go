@@ -51,5 +51,5 @@ func trackHandler(w http.ResponseWriter, r *http.Request) {
 
 	// 顯示訊息
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
-	fmt.Fprint(w, "<p>您已完成社交工程演練!!</p>")
+	fmt.Fprint(w, "<p>您已完成社交工程演練!!</p><p style=\"color: red;\">請保持沉默，勿告知其他同仁</p>")
 }
